@@ -1,11 +1,11 @@
 FROM ubuntu:bionic
-#
+
 ENV JUPYTERLAB_VERSION 3.0.0
 ENV LANG C.UTF-8
 ENV LC_ALL C.UTF-8
-#
+
 ENV DEB_PACKAGES="sudo nano less git python3-dev python3-pip python3-setuptools nodejs"
-#
+
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive && echo "America/Mexico_City" > /etc/timezone && apt-get install -y tzdata
 
 RUN apt-get update && apt-get install -y $DEB_PACKAGES && pip3 install --upgrade pip
